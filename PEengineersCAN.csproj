@@ -2,8 +2,22 @@
 
     <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+        <PackageId>PEengineersCAN</PackageId>
+         <Version>0.0.1</Version>
+        <Authors>Hajtó Kornél</Authors>
+        <Company>Hajtó Kornél</Company>
+        <Description>NuGet package for processing CAN data/messages</Description>
+        <PackageProjectUrl></PackageProjectUrl>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <RepositoryUrl>https://github.com/KornelHajto/PEengineersCAN</RepositoryUrl>
     </PropertyGroup>
+
+    <ItemGroup>
+      <None Update="README.md">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
+    </ItemGroup>
 
 </Project>
