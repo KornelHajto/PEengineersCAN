@@ -6,6 +6,8 @@ namespace PEengineersCAN;
 
 public static class Utils
 {
+    /// <summary>
+    /// Safely parses a string to the specified numeric type with error handling.
     /// </summary>
     /// <typeparam name="T">The target numeric type (int, uint, byte, double, etc.)</typeparam>
     /// <param name="str">The string to parse</param>

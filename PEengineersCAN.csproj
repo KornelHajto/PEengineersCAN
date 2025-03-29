@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
         <PackageId>PEengineersCAN</PackageId>
-         <Version>0.0.3</Version>
+         <Version>0.0.4</Version>
         <Authors>Hajtó Kornél</Authors>
         <Company>Hajtó Kornél</Company>
         <Description>NuGet package for processing CAN data/messages</Description>
