@@ -3,11 +3,12 @@
     <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
         <PackageId>PEengineersCAN</PackageId>
-         <Version>0.0.1</Version>
+         <Version>0.0.3</Version>
         <Authors>Hajtó Kornél</Authors>
         <Company>Hajtó Kornél</Company>
         <Description>NuGet package for processing CAN data/messages</Description>
-        <PackageProjectUrl></PackageProjectUrl>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <RepositoryUrl>https://github.com/KornelHajto/PEengineersCAN</RepositoryUrl>
