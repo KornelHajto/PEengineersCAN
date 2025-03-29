@@ -150,6 +150,13 @@ public class DBCDatabase
         }
     }
 
+    /// <summary>
+    /// Decodes a CAN message using the loaded DBC definitions.
+    /// </summary>
+    /// <param name="canId">The ID of the CAN message to decode</param>
+    /// <param name="data">The byte array containing the message data</param>
+    /// <returns>A dictionary mapping signal names to their decoded values</returns>
+    /// <exception cref="InvalidOperationException">Thrown when the message ID is not found in the database</exception>
     public Dictionary<string, double> DecodeMessage(uint canId, byte[] data)
     {
         if (!messages.TryGetValue(canId, out DBCMessage message))
