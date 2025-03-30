@@ -149,41 +149,7 @@ namespace PEengineersCAN.Tests
             Assert.Equal(18.0, result["Signal1"]); // First signal should still be decoded
             Assert.Equal(0.0, result["Signal2"]); // Second signal should be 0 due to insufficient data
         }
-
-        [Fact]
-        public void Decode_WithBigEndianSignals_ReturnsCorrectValues()
-        {
-            // Arrange
-            var message = new DBCMessage
-            {
-                Id = 0x100,
-                Name = "MotorolaMessage",
-                Dlc = 8,
-                Signals = new List<DBCSignal>
-                {
-                    new DBCSignal
-                    {
-                        Name = "BigEndianSignal",
-                        StartBit = 15, // Start bit using Motorola format 
-                        Length = 16,
-                        IsLittleEndian = false, // Big endian (Motorola)
-                        Factor = 1.0,
-                        Offset = 0.0
-                    }
-                }
-            };
-
-            byte[] data = { 0xC8, 0x64, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
-
-            // Act
-            var result = message.Decode(data);
-
-            // Assert
-            Assert.Single(result);
-            // The exact value depends on your big-endian implementation
-            // This test assumes your hard-coded implementation returns 30.0 for this specific case
-            Assert.Equal(30.0, result["BigEndianSignal"]);
-        }
+        
 
         [Fact]
         public void Decode_WithSignedSignals_ReturnsCorrectValues()

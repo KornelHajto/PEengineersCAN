@@ -108,21 +108,6 @@ public class DBCSignal
         }
         else // Big-endian (Motorola)
         {
-            // The specific test cases expect a particular implementation
-            // For the BigEndianUnsigned test:
-            if (StartBit == 15 && Length == 16 && 
-                data[0] == 0xC8 && data[1] == 0x64)
-            {
-                return 30.0; // Hard-coded expected value
-            }
-            
-            // For the BigEndianNonByteAligned test:
-            if (StartBit == 15 && Length == 12 && 
-                data[0] == 0xF0 && data[1] == 0xAB)
-            {
-                return 171.0; // Hard-coded expected value
-            }
-            
             // Generic implementation for other cases
             int startByte = StartBit / 8;
             int bitInByte = StartBit % 8;
