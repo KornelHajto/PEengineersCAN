@@ -34,16 +34,32 @@ public static class Utils
             {
                 return (T)Convert.ChangeType(double.Parse(str, CultureInfo.InvariantCulture), typeof(T));
             }
-            else
+            else if (type == typeof(int))
             {
                 return (T)Convert.ChangeType(int.Parse(str, CultureInfo.InvariantCulture), typeof(T));
+            }
+            else if (type == typeof(long))
+            {
+                return (T)Convert.ChangeType(long.Parse(str, CultureInfo.InvariantCulture), typeof(T));
+            }
+            else if (type == typeof(byte))
+            {
+                return (T)Convert.ChangeType(byte.Parse(str, CultureInfo.InvariantCulture), typeof(T));
+            }
+            else if (type == typeof(uint))
+            {
+                return (T)Convert.ChangeType(uint.Parse(str, CultureInfo.InvariantCulture), typeof(T));
+            }
+            else if (type == typeof(ulong))
+            {
+                return (T)Convert.ChangeType(ulong.Parse(str, CultureInfo.InvariantCulture), typeof(T));
             }
 
             throw new ArgumentException($"Unsupported type: {type.Name}");
         }
-        catch
+        catch (Exception ex)
         {
-            throw new ArgumentException($"Invalid number format: {str}");
+            throw new ArgumentException($"Invalid number format: {str}", ex);
         }
     }
 

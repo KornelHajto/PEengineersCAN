@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\lxndr\\RiderProjects\\PEengineersCAN\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{49D21AF3-68F3-4F9F-A473-C2690D00E2AB}|PEengineersCAN.Tests\\PEengineersCAN.Tests.csproj|c:\\users\\lxndr\\riderprojects\\peengineerscan\\peengineerscan.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{49D21AF3-68F3-4F9F-A473-C2690D00E2AB}|PEengineersCAN.Tests\\PEengineersCAN.Tests.csproj|solutionrelative:peengineerscan.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C6E1BFBD-9130-4744-8176-E7158D9AA6AA}|PEengineersCAN.Tests\\PEengineersCAN.Tests.csproj|c:\\users\\lxndr\\riderprojects\\peengineerscan\\peengineerscan.tests\\peengineerscan.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C6E1BFBD-9130-4744-8176-E7158D9AA6AA}|PEengineersCAN.Tests\\PEengineersCAN.Tests.csproj|solutionrelative:peengineerscan.tests\\peengineerscan.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6E1BFBD-9130-4744-8176-E7158D9AA6AA}|PEengineersCAN.Tests\\PEengineersCAN.Tests.csproj|c:\\users\\lxndr\\riderprojects\\peengineerscan\\peengineerscan.tests\\peengineerscan.tests.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{C6E1BFBD-9130-4744-8176-E7158D9AA6AA}|PEengineersCAN.Tests\\PEengineersCAN.Tests.csproj|solutionrelative:peengineerscan.tests\\peengineerscan.tests.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6E1BFBD-9130-4744-8176-E7158D9AA6AA}|PEengineersCAN.Tests\\PEengineersCAN.Tests.csproj|c:\\users\\lxndr\\riderprojects\\peengineerscan\\peengineerscan.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6E1BFBD-9130-4744-8176-E7158D9AA6AA}|PEengineersCAN.Tests\\PEengineersCAN.Tests.csproj|solutionrelative:peengineerscan.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +31,39 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "PEengineersCAN.Tests",
+              "DocumentMoniker": "C:\\Users\\lxndr\\RiderProjects\\PEengineersCAN\\PEengineersCAN.Tests\\PEengineersCAN.Tests.csproj",
+              "RelativeDocumentMoniker": "PEengineersCAN.Tests\\PEengineersCAN.Tests.csproj",
+              "ToolTip": "C:\\Users\\lxndr\\RiderProjects\\PEengineersCAN\\PEengineersCAN.Tests\\PEengineersCAN.Tests.csproj",
+              "RelativeToolTip": "PEengineersCAN.Tests\\PEengineersCAN.Tests.csproj",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-30T00:17:58.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PEengineersCAN.Tests",
+              "DocumentMoniker": "C:\\Users\\lxndr\\RiderProjects\\PEengineersCAN\\PEengineersCAN.Tests\\PEengineersCAN.Tests.csproj",
+              "RelativeDocumentMoniker": "PEengineersCAN.Tests\\PEengineersCAN.Tests.csproj",
+              "ToolTip": "C:\\Users\\lxndr\\RiderProjects\\PEengineersCAN\\PEengineersCAN.Tests\\PEengineersCAN.Tests.csproj",
+              "RelativeToolTip": "PEengineersCAN.Tests\\PEengineersCAN.Tests.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-30T00:17:21.785Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "UnitTest1.cs",
               "DocumentMoniker": "C:\\Users\\lxndr\\RiderProjects\\PEengineersCAN\\PEengineersCAN.Tests\\UnitTest1.cs",
               "RelativeDocumentMoniker": "PEengineersCAN.Tests\\UnitTest1.cs",
               "ToolTip": "C:\\Users\\lxndr\\RiderProjects\\PEengineersCAN\\PEengineersCAN.Tests\\UnitTest1.cs",
               "RelativeToolTip": "PEengineersCAN.Tests\\UnitTest1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-29T23:55:33.103Z",
+              "WhenOpened": "2025-03-30T00:16:58.868Z",
               "EditorCaption": ""
             }
           ]
