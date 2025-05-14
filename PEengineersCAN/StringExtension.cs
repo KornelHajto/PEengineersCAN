@@ -4,6 +4,17 @@ using System.Linq;
 
 namespace PEengineersCAN
 {
+    
+    /// <summary>
+    /// Provides extension methods for safer and more convenient string manipulation.
+    /// <para>
+    /// The <see cref="StringExtension"/> class offers utility methods to handle common string operations,
+    /// such as null-safe trimming and splitting with cleanup of results. These extensions simplify dealing
+    /// with null or poorly formatted string input, returning predictable results and reducing the need
+    /// for repetitive null checks or post-processing.
+    /// </para>
+    /// </summary>
+
     public static class StringExtension
     {
         /// <summary>
