@@ -1,3 +1,5 @@
+![Coverage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/KornelHajto/b0e41f803bb07bbbfaeb69d3de741def/raw/code-coverage.json)
+
 # PEengineersCAN Documentation / User guide
 
 A C# library for parsing and interpreting DBC (CAN database) files, with utilities for CAN message decoding.
