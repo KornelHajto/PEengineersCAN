@@ -16,13 +16,17 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 9.0.x
+      
       - name: Restore dependencies
         run: dotnet restore
+      
       - name: Build
         run: dotnet build --no-restore
+      
       - name: Test with coverage
         run: |
-          dotnet test --no-build --collect:"XPlat Code Coverage" --results-directory TestResults
+          dotnet test --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=opencover
+      
       - name: Generate Coverage Badge
         uses: simon-k/dotnet-code-coverage-badge@v1.0.0
         with:
