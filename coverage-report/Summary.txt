@@ -1,0 +1,27 @@
+Summary
+  Generated on: 05/20/2025 - 09:45:35
+  Coverage date: 05/20/2025 - 09:21:24 - 05/20/2025 - 09:45:25
+  Parser: MultiReport (4x Cobertura)
+  Assemblies: 1
+  Classes: 5
+  Files: 5
+  Line coverage: 88.1%
+  Covered lines: 425
+  Uncovered lines: 57
+  Coverable lines: 482
+  Total lines: 853
+  Branch coverage: 78.7% (230 of 292)
+  Covered branches: 230
+  Total branches: 292
+  Method coverage: 97.3% (37 of 38)
+  Full method coverage: 71% (27 of 38)
+  Covered methods: 37
+  Fully covered methods: 27
+  Total methods: 38
+
+PEengineersCAN                     88.1%
+  PEengineersCAN.DBCDatabase       92.2%
+  PEengineersCAN.DBCMessage         100%
+  PEengineersCAN.DBCSignal         71.4%
+  PEengineersCAN.StringExtension    100%
+  PEengineersCAN.Utils             89.5%

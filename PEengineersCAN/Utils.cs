@@ -169,6 +169,30 @@ namespace PEengineersCAN
                             return true;
                         }
                     }
+                    else if (type == typeof(short))
+                    {
+                        if (short.TryParse(str, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out short val))
+                        {
+                            result = (T)(object)val;
+                            return true;
+                        }
+                    }
+                    else if (type == typeof(ushort))
+                    {
+                        if (ushort.TryParse(str, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out ushort val))
+                        {
+                            result = (T)(object)val;
+                            return true;
+                        }
+                    }
+                    else if (type == typeof(sbyte))
+                    {
+                        if (sbyte.TryParse(str, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out sbyte val))
+                        {
+                            result = (T)(object)val;
+                            return true;
+                        }
+                    }
                 }
                 else
                 {
@@ -223,6 +247,30 @@ namespace PEengineersCAN
                     else if (type == typeof(ulong))
                     {
                         if (ulong.TryParse(str, NumberStyles.Integer, CultureInfo.InvariantCulture, out ulong val))
+                        {
+                            result = (T)(object)val;
+                            return true;
+                        }
+                    }
+                    else if (type == typeof(short))
+                    {
+                        if (short.TryParse(str, NumberStyles.Integer, CultureInfo.InvariantCulture, out short val))
+                        {
+                            result = (T)(object)val;
+                            return true;
+                        }
+                    }
+                    else if (type == typeof(ushort))
+                    {
+                        if (ushort.TryParse(str, NumberStyles.Integer, CultureInfo.InvariantCulture, out ushort val))
+                        {
+                            result = (T)(object)val;
+                            return true;
+                        }
+                    }
+                    else if (type == typeof(sbyte))
+                    {
+                        if (sbyte.TryParse(str, NumberStyles.Integer, CultureInfo.InvariantCulture, out sbyte val))
                         {
                             result = (T)(object)val;
                             return true;
