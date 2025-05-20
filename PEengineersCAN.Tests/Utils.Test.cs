@@ -304,6 +304,122 @@ namespace PEengineersCAN.Tests
             Assert.Empty(result);
         }
 
-        
+        [Fact]
+        public void TryParse_ValidIntegerString_ReturnsTrueAndValue()
+        {
+            bool success = Utils.TryParse<int>("42", out int value);
+            Assert.True(success);
+            Assert.Equal(42, value);
+        }
+
+        [Fact]
+        public void TryParse_InvalidIntegerString_ReturnsFalseAndDefault()
+        {
+            bool success = Utils.TryParse<int>("notanumber", out int value);
+            Assert.False(success);
+            Assert.Equal(0, value);
+        }
+
+        [Fact]
+        public void TryParse_EmptyString_ReturnsFalseAndDefault()
+        {
+            bool success = Utils.TryParse<int>("", out int value);
+            Assert.False(success);
+            Assert.Equal(0, value);
+        }
+
+        [Fact]
+        public void TryParse_UnsupportedType_ReturnsFalseAndDefault()
+        {
+            bool success = Utils.TryParse<bool>("true", out bool value);
+            Assert.False(success);
+            Assert.False(value);
+        }
+
+        [Fact]
+        public void TryParse_ValidHexString_ReturnsTrueAndValue()
+        {
+            bool success = Utils.TryParse<byte>("1A", out byte value, hex: true);
+            Assert.True(success);
+            Assert.Equal(0x1A, value);
+        }
+
+        [Fact]
+        public void TryParseSpan_ValidInteger_ReturnsTrueAndValue()
+        {
+            ReadOnlySpan<char> span = "123".AsSpan();
+            bool success = Utils.TryParse<int>(span, out int value);
+            Assert.True(success);
+            Assert.Equal(123, value);
+        }
+
+        [Fact]
+        public void TryParseSpan_InvalidInteger_ReturnsFalseAndDefault()
+        {
+            ReadOnlySpan<char> span = "bad".AsSpan();
+            bool success = Utils.TryParse<int>(span, out int value);
+            Assert.False(success);
+            Assert.Equal(0, value);
+        }
+
+        [Fact]
+        public void TryParseSpan_Empty_ReturnsFalseAndDefault()
+        {
+            ReadOnlySpan<char> span = ReadOnlySpan<char>.Empty;
+            bool success = Utils.TryParse<int>(span, out int value);
+            Assert.False(success);
+            Assert.Equal(0, value);
+        }
+
+        [Fact]
+        public void TryParseSpan_UnsupportedType_ReturnsFalseAndDefault()
+        {
+            ReadOnlySpan<char> span = "true".AsSpan();
+            bool success = Utils.TryParse<bool>(span, out bool value);
+            Assert.False(success);
+            Assert.False(value);
+        }
+
+        [Fact]
+        public void TryParseSpan_ValidHex_ReturnsTrueAndValue()
+        {
+            ReadOnlySpan<char> span = "FF".AsSpan();
+            bool success = Utils.TryParse<byte>(span, out byte value, hex: true);
+            Assert.True(success);
+            Assert.Equal(255, value);
+        }
+
+        [Fact]
+        public void TryParse_NegativeIntegerString_ReturnsTrueAndValue()
+        {
+            bool success = Utils.TryParse<int>("-7", out int value);
+            Assert.True(success);
+            Assert.Equal(-7, value);
+        }
+
+        [Fact]
+        public void TryParse_NullString_ReturnsFalseAndDefault()
+        {
+            string input = null;
+            bool success = Utils.TryParse<int>(input, out int value);
+            Assert.False(success);
+            Assert.Equal(0, value);
+        }
+
+        [Fact]
+        public void TryParse_ValidHexString_IntType_ReturnsTrueAndValue()
+        {
+            bool success = Utils.TryParse<int>("1A2B", out int value, hex: true);
+            Assert.True(success);
+            Assert.Equal(0x1A2B, value);
+        }
+
+        [Fact]
+        public void TryParse_ValidHexString_LongType_ReturnsTrueAndValue()
+        {
+            bool success = Utils.TryParse<long>("7FFFFFFFFFFFFFFF", out long value, hex: true);
+            Assert.True(success);
+            Assert.Equal(9223372036854775807L, value); // long.MaxValue
+        }
     }
 }
