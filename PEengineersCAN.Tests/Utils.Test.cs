@@ -421,5 +421,100 @@ namespace PEengineersCAN.Tests
             Assert.True(success);
             Assert.Equal(9223372036854775807L, value); // long.MaxValue
         }
+
+        // --- Additional coverage for all supported numeric types ---
+        [Fact]
+        public void TryParse_ShortTypes_ReturnsTrueAndValue()
+        {
+            Assert.True(Utils.TryParse<short>("123", out var s));
+            Assert.Equal((short)123, s);
+            Assert.True(Utils.TryParse<ushort>("456", out var us));
+            Assert.Equal((ushort)456, us);
+            Assert.True(Utils.TryParse<sbyte>("-12", out var sb));
+            Assert.Equal((sbyte)-12, sb);
+        }
+
+        [Fact]
+        public void TryParse_FloatAndDoubleTypes_ReturnsTrueAndValue()
+        {
+            Assert.True(Utils.TryParse<float>("3.14", out var f));
+            Assert.Equal(3.14f, f, 2);
+            Assert.True(Utils.TryParse<double>("2.718", out var d));
+            Assert.Equal(2.718, d, 3);
+        }
+
+        [Fact]
+        public void TryParse_DecimalType_ReturnsFalse()
+        {
+            // Not supported, should return false
+            Assert.False(Utils.TryParse<decimal>("1.23", out var dec));
+            Assert.Equal(0m, dec);
+        }
+
+        // --- Unsupported types ---
+        private class Dummy {}
+        [Fact]
+        public void TryParse_UnsupportedStringAndCustomType_ReturnsFalseAndDefault()
+        {
+            Assert.False(Utils.TryParse<string>("test", out var str));
+            Assert.Null(str);
+            Assert.False(Utils.TryParse<Dummy>("test", out var dummy));
+            Assert.Null(dummy);
+        }
+
+        [Fact]
+        public void SafeParse_UnsupportedStringAndCustomType_Throws()
+        {
+            Assert.Throws<ArgumentException>(() => Utils.SafeParse<string>("test"));
+            Assert.Throws<ArgumentException>(() => Utils.SafeParse<Dummy>("test"));
+        }
+
+        // --- HexToBytes edge cases ---
+        [Fact]
+        public void HexToBytes_OnlyQuotes_ReturnsEmpty()
+        {
+            Assert.Empty(Utils.HexToBytes("\"\""));
+        }
+        [Fact]
+        public void HexToBytes_WhitespaceAndQuotes_ReturnsEmpty()
+        {
+            Assert.Empty(Utils.HexToBytes("   \"   \"   "));
+        }
+        [Fact]
+        public void HexToBytes_SingleChar_ReturnsSingleByte()
+        {
+            var result = Utils.HexToBytes("F");
+            Assert.Single(result);
+            Assert.Equal(0x0F, result[0]);
+        }
+        [Fact]
+        public void HexToBytes_OddLengthWithWhitespace_ReturnsCorrect()
+        {
+            var result = Utils.HexToBytes(" 1 2 3 ");
+            Assert.Equal(new byte[] { 0x01, 0x23 }, result);
+        }
+        [Fact]
+        public void HexToBytes_InvalidCharInMiddle_Throws()
+        {
+            Assert.Throws<ArgumentException>(() => Utils.HexToBytes("1A2X3C"));
+        }
+
+        // --- TryParse error/overflow paths ---
+        [Fact]
+        public void TryParse_OverflowAndNegativeUnsigned_ReturnsFalse()
+        {
+            Assert.False(Utils.TryParse<byte>("256", out var b));
+            Assert.Equal(0, b);
+            Assert.False(Utils.TryParse<uint>("-1", out var u));
+            Assert.Equal(0u, u);
+        }
+        [Fact]
+        public void TryParse_FloatAndDouble_Invalid_ReturnsFalse()
+        {
+            Assert.False(Utils.TryParse<float>("notafloat", out var f));
+            Assert.Equal(0f, f);
+            Assert.False(Utils.TryParse<double>("notadouble", out var d));
+            Assert.Equal(0d, d);
+        }
     }
 }
